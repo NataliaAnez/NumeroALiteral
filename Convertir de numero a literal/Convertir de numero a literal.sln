@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Convertir de numero a literal", "Convertir de numero a literal\Convertir de numero a literal.csproj", "{AD9DCD8B-AB28-42BC-A4EB-AA9CDC50F8C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTestLiteral", "NUnitTestLiteral\NUnitTestLiteral.csproj", "{18B98330-282E-4B1C-8A7E-EF499F34A7FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AD9DCD8B-AB28-42BC-A4EB-AA9CDC50F8C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD9DCD8B-AB28-42BC-A4EB-AA9CDC50F8C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD9DCD8B-AB28-42BC-A4EB-AA9CDC50F8C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18B98330-282E-4B1C-8A7E-EF499F34A7FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18B98330-282E-4B1C-8A7E-EF499F34A7FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18B98330-282E-4B1C-8A7E-EF499F34A7FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18B98330-282E-4B1C-8A7E-EF499F34A7FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
