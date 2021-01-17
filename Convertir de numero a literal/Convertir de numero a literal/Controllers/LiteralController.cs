@@ -47,7 +47,7 @@ namespace Convertir_de_numero_a_literal.Controllers
 
                 respuesta += Centena(num1[4]);
                 respuesta += Decena(num1[5]);
-                if (num1[5] != '0')
+                if (num1[6] != '0')
                 { respuesta += "y "; }
                 respuesta += Unidad(num1[6]);
 
@@ -59,17 +59,17 @@ namespace Convertir_de_numero_a_literal.Controllers
 
                 respuesta += Centena(num1[0]);
                 respuesta += Decena(num1[1]);
-                if (num1[1] != '0')
+                if (num1[2] != '0')
                 { respuesta += "y "; }
                 respuesta += Unidad(num1[2]);
                 if (num1[0] != '0' || num1[1] != '0' || num1[2] != '0')
                 {
-                    respuesta += " mil";
+                    respuesta += " mil ";
                 }
 
                 respuesta += Centena(num1[3]);
                 respuesta += Decena(num1[4]);
-                if (num1[4] != '0')
+                if (num1[5] != '0')
                 { respuesta += "y "; }
                 respuesta += Unidad(num1[5]);
 
@@ -81,7 +81,7 @@ namespace Convertir_de_numero_a_literal.Controllers
 
 
                 respuesta += Decena(num1[0]);
-                if (num1[0] != '0')
+                if (num1[1] != '0')
                 { respuesta += "y "; }
                 respuesta += Unidad(num1[1]);
                 if (num1[0] != '0' || num1[1] != '0')
@@ -91,7 +91,7 @@ namespace Convertir_de_numero_a_literal.Controllers
 
                 respuesta += Centena(num1[2]);
                 respuesta += Decena(num1[3]);
-                if (num1[3] != '0')
+                if (num1[4] != '0')
                 { respuesta += "y "; }
                 respuesta += Unidad(num1[4]);
 
@@ -109,7 +109,7 @@ namespace Convertir_de_numero_a_literal.Controllers
 
                 respuesta += Centena(num1[1]);
                 respuesta += Decena(num1[2]);
-                if (num1[2] != '0')
+                if (num1[3] != '0')
                 { respuesta += "y "; }
                 respuesta += Unidad(num1[3]);
 
@@ -122,7 +122,7 @@ namespace Convertir_de_numero_a_literal.Controllers
 
                 respuesta += Centena(num1[0]);
                 respuesta += Decena(num1[1]);
-                if (num1[1] != '0')
+                if (num1[2] != '0')
                 { respuesta += "y "; }
                 respuesta += Unidad(num1[2]);
 
@@ -133,7 +133,7 @@ namespace Convertir_de_numero_a_literal.Controllers
             {
 
                 respuesta += Decena(num1[0]);
-                if (num1[0] != '0')
+                if (num1[1] != '0')
                 { respuesta += "y "; }
                 respuesta += Unidad(num1[1]);
 
@@ -267,17 +267,17 @@ namespace Convertir_de_numero_a_literal.Controllers
                 respuesta += Centena(num1[1]);
                 respuesta += Decena(num1[2]);
                 if (num1[2] != '0')
-                { respuesta += "y"; }
+                { respuesta += " y"; }
                 respuesta += Unidad(num1[3]);
                 if (num1[1] != '0' || num1[2] != '0' || num1[3] != '0')
                 {
-                    respuesta += " mil";
+                    respuesta += " mil ";
                 }
 
                 respuesta += Centena(num1[4]);
                 respuesta += Decena(num1[5]);
-                if (num1[5] != '0')
-                { respuesta += "y "; }
+                if (num1[6] != '0')
+                { respuesta += " y "; }
                 respuesta += Unidad(num1[6]);
 
 
@@ -293,13 +293,13 @@ namespace Convertir_de_numero_a_literal.Controllers
                 respuesta += Unidad(num1[2]);
                 if (num1[0] != '0' || num1[1] != '0' || num1[2] != '0')
                 {
-                    respuesta += " mil";
+                    respuesta += " mil ";
                 }
 
                 respuesta += Centena(num1[3]);
                 respuesta += Decena(num1[4]);
-                if (num1[4] != '0')
-                { respuesta += "y"; }
+                if (num1[5] != '0')
+                { respuesta += " y"; }
                 respuesta += Unidad(num1[5]);
 
 
@@ -315,13 +315,13 @@ namespace Convertir_de_numero_a_literal.Controllers
                 respuesta += Unidad(num1[1]);
                 if (num1[0] != '0' || num1[1] != '0')
                 { 
-                    respuesta += " mil";
+                    respuesta += " mil ";
                 }
 
                 respuesta += Centena(num1[2]);
                 respuesta += Decena(num1[3]);
-                if (num1[3] != '0')
-                { respuesta += "y"; }
+                if (num1[4] != '0')
+                { respuesta += " y"; }
                 respuesta += Unidad(num1[4]);
 
 
@@ -333,12 +333,12 @@ namespace Convertir_de_numero_a_literal.Controllers
                 respuesta += Unidad(num1[0]);
                 if (num1[0] != '0')
                 {
-                    respuesta += " mil";
+                    respuesta += " mil ";
                 }
 
                 respuesta += Centena(num1[1]);
                 respuesta += Decena(num1[2]);
-                if (num1[2] != '0')
+                if (num1[3] != '0')
                 { respuesta += "y "; }
                 respuesta += Unidad(num1[3]);
 
@@ -351,7 +351,7 @@ namespace Convertir_de_numero_a_literal.Controllers
 
                 respuesta += Centena(num1[0]);
                 respuesta += Decena(num1[1]);
-                if (num1[1] != '0')
+                if (num1[2] != '0')
                 { respuesta += "y "; }
                 respuesta += Unidad(num1[2]);
 
@@ -362,7 +362,7 @@ namespace Convertir_de_numero_a_literal.Controllers
             {
           
                 respuesta += Decena(num1[0]);
-                if (num1[0] != '0')
+                if (num1[1] != '0')
                 { respuesta += "y "; }
                 respuesta += Unidad(num1[1]);
 

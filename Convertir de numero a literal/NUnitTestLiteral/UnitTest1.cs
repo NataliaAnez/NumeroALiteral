@@ -13,13 +13,13 @@ namespace NUnitTestLiteral
         public void TestLiteralGet1()
         { 
             //Arange=Preparación
-            int num1 = 5;
+            string num1 = "5";
             string esperado = " Cinco ";
             LiteralController lit= new LiteralController();
 
             //Act=Ejecución
 
-            string resultado = lit.NumeroGet( num1, num2);
+            string resultado = lit.( num1);
 
             //Assert=Verificación
             Assert.AreEqual(esperado, resultado);
