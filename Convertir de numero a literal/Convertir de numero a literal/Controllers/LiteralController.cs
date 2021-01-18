@@ -11,155 +11,13 @@ namespace Convertir_de_numero_a_literal.Controllers
 
     public class LiteralController : Controller
     {
-         [HttpGet]
-
-        public string NumeroGet(string num1)
-        {
-
-            string respuesta = "";   
-            
-           /* if (num1[0] == '-')
-            {
-                respuesta += "Menos ";
-                for (int i = 0; i < num1.Length; i++)
-                {
-                    num1[i] = num1[i + 1];
-                }
-
-            }*/
-
-            if (num1.Length > 7)
-            { return "Numero muy grande"; }
-            if (num1.Length == 0)
-            { return "Vacio"; }
-            if (num1.Length == 7)
-            {
-                respuesta += Millon(num1[0]);
-                respuesta += Centena(num1[1]);
-                respuesta += Decena(num1[2]);
-                if (num1[2] != '0')
-                { respuesta += "y "; }
-                respuesta += Unidad(num1[3]);
-                if (num1[1] != '0' || num1[2] != '0' || num1[3] != '0')
-                {
-                    respuesta += " mil ";
-                }
-
-                respuesta += Centena(num1[4]);
-                respuesta += Decena(num1[5]);
-                if (num1[6] != '0')
-                { respuesta += "y "; }
-                respuesta += Unidad(num1[6]);
-
-
-            }
-
-            if (num1.Length == 6)
-            {
-
-                respuesta += Centena(num1[0]);
-                respuesta += Decena(num1[1]);
-                if (num1[2] != '0')
-                { respuesta += "y "; }
-                respuesta += Unidad(num1[2]);
-                if (num1[0] != '0' || num1[1] != '0' || num1[2] != '0')
-                {
-                    respuesta += " mil ";
-                }
-
-                respuesta += Centena(num1[3]);
-                respuesta += Decena(num1[4]);
-                if (num1[5] != '0')
-                { respuesta += "y "; }
-                respuesta += Unidad(num1[5]);
-
-
-            }
-
-            if (num1.Length == 5)
-            {
-
-
-                respuesta += Decena(num1[0]);
-                if (num1[1] != '0')
-                { respuesta += "y "; }
-                respuesta += Unidad(num1[1]);
-                if (num1[0] != '0' || num1[1] != '0')
-                {
-                    respuesta += " mil ";
-                }
-
-                respuesta += Centena(num1[2]);
-                respuesta += Decena(num1[3]);
-                if (num1[4] != '0')
-                { respuesta += "y "; }
-                respuesta += Unidad(num1[4]);
-
-
-            }
-
-            if (num1.Length == 4)
-            {
-
-                respuesta += Unidad(num1[0]);
-                if (num1[0] != '0')
-                {
-                    respuesta += " mil ";
-                }
-
-                respuesta += Centena(num1[1]);
-                respuesta += Decena(num1[2]);
-                if (num1[3] != '0')
-                { respuesta += "y "; }
-                respuesta += Unidad(num1[3]);
-
-
-            }
-
-
-            if (num1.Length == 3)
-            {
-
-                respuesta += Centena(num1[0]);
-                respuesta += Decena(num1[1]);
-                if (num1[2] != '0')
-                { respuesta += "y "; }
-                respuesta += Unidad(num1[2]);
-
-
-            }
-
-            if (num1.Length == 2)
-            {
-
-                respuesta += Decena(num1[0]);
-                if (num1[1] != '0')
-                { respuesta += "y "; }
-                respuesta += Unidad(num1[1]);
-
-
-            }
-
-            if (num1.Length == 1)
-            {
-                respuesta += Unidad(num1[0]);
-
-
-            }
-
-
-            return respuesta;
-
-
-        }
-
 
         private string Millon(char x)
         {
             if (x == '1')
             { return "Millon "; }
             if (x == '2')
-            { return  "Dos Millones "; }
+            { return "Dos Millones "; }
             if (x == '3')
             { return "Tres Millones "; }
             if (x == '4')
@@ -172,16 +30,16 @@ namespace Convertir_de_numero_a_literal.Controllers
             { return "Siete Millones "; }
             if (x == '8')
             { return "Ocho Millones "; }
-            
-            return "Nueve Millones "; 
-           
+
+            return "Nueve Millones ";
+
         }
 
         private string Centena(char x)
         {
 
             if (x == '1')
-            { return "Cien "; }
+            { return "Ciento "; }
             if (x == '2')
             { return "Doscientos "; }
             if (x == '3')
@@ -248,6 +106,281 @@ namespace Convertir_de_numero_a_literal.Controllers
             return "";
         }
 
+        private string MayorADiez(char x)
+        {
+
+            if (x == '1')
+            { return "Once"; }
+            if (x == '2')
+            { return "Doce"; }
+            if (x == '3')
+            { return "Trece"; }
+            if (x == '4')
+            { return "Catorce"; }
+            if (x == '5')
+            { return "Quince"; }
+
+            return "";
+        }
+
+
+        [HttpGet]
+
+        public string NumeroGet(string num1)
+        {
+
+            string respuesta = "";
+
+            /* if (num1[0] == '-')
+             {
+                 respuesta += "Menos ";
+                 for (int i = 0; i < num1.Length; i++)
+                 {
+                     num1[i] = num1[i + 1];
+                 }
+
+             }*/
+
+            if (num1.Length > 7)
+            { return "Numero muy grande"; }
+            if (num1.Length == 0)
+            { return "Vacio"; }
+            if (num1.Length == 7)
+            {
+                respuesta += Millon(num1[0]);
+
+                if (num1[0] == '1' && num1[1] == '0' && num1[2] == '0')
+                {
+
+                    respuesta += "Cien";
+                }
+                else
+                {
+                    respuesta += Centena(num1[1]);
+                }
+                respuesta += Decena(num1[2]);
+                if (num1[2] != '0' || num1[3] != '1')
+                { respuesta += " y"; }
+
+                if (num1[2] == '0' && num1[3] == '1')
+                {
+                    respuesta += " un";
+
+                }
+                else
+                { 
+                respuesta += Unidad(num1[3]);
+                }
+
+                if (num1[1] != '0' || num1[2] != '0' || num1[3] != '0')
+                {
+                    respuesta += " mil ";
+                }
+
+                if (num1[4] == '1' && num1[5] == '0' && num1[6] == '0')
+                {
+
+                    respuesta += "Cien";
+                }
+                else
+                {
+                    respuesta += Centena(num1[4]);
+                }
+
+                respuesta += Decena(num1[5]);
+                if (num1[6] != '0')
+                { respuesta += " y "; }
+                respuesta += Unidad(num1[6]);
+
+
+            }
+
+            if (num1.Length == 6)
+            {
+
+                if (num1[0] == '1' && num1[1] == '0' && num1[2] == '0')
+                {
+
+                    respuesta += "Cien";
+                }
+                else
+                {
+                    respuesta += Centena(num1[0]);
+                }
+
+                respuesta += Decena(num1[1]);
+                if (num1[2] != '0')
+                { respuesta += " y "; }
+
+                if (num1[1] == '0' && num1[2] == '1')
+                {
+                    respuesta += "un";
+
+                }
+
+                else
+                {
+                    respuesta += Unidad(num1[3]);
+
+                }
+
+                    if (num1[0] != '0' || num1[1] != '0' || num1[2] != '0')
+                {
+                    respuesta += " mil ";
+                }
+
+                if (num1[3] == '1' && num1[4] == '0' && num1[5] == '0')
+                {
+
+                    respuesta += "Cien";
+                }
+                else
+                {
+                    respuesta += Centena(num1[3]);
+                }
+
+                respuesta += Decena(num1[4]);
+                if (num1[5] != '0')
+                { respuesta += " y"; }
+                respuesta += Unidad(num1[5]);
+
+
+            }
+
+            if (num1.Length == 5)
+            {
+
+
+                respuesta += Decena(num1[0]);
+                if (num1[1] != '0')
+                { respuesta += "y "; }
+
+                if (num1[0] == '0' && num1[1] == '1')
+                {
+                    respuesta += "un";
+
+                }
+
+                else
+                {
+                    respuesta += Unidad(num1[1]);
+
+                }
+
+
+                if (num1[0] != '0' || num1[1] != '0')
+                {
+                    respuesta += " mil ";
+                }
+
+                if (num1[2] == '1' && num1[3] == '0' && num1[4] == '0')
+                {
+
+                    respuesta += "Cien";
+                }
+                else
+                {
+                    respuesta += Centena(num1[2]);
+                }
+
+                respuesta += Decena(num1[3]);
+                if (num1[4] != '0')
+                { respuesta += " y"; }
+                respuesta += Unidad(num1[4]);
+
+
+            }
+
+            if (num1.Length == 4)
+            {
+
+                respuesta += Unidad(num1[0]);
+
+
+                if (num1[0] != '0')
+                {
+                    respuesta += " mil ";
+                }
+
+                if (num1[1] == '1' && num1[2] == '0' && num1[3] == '0')
+                {
+
+                    respuesta += "Cien";
+                }
+                else
+                {
+                    respuesta += Centena(num1[1]);
+                }
+
+                respuesta += Decena(num1[2]);
+                if (num1[3] != '0')
+                { respuesta += "y "; }
+                respuesta += Unidad(num1[3]);
+
+
+            }
+
+
+            if (num1.Length == 3)
+            {
+
+                if (num1[0] == '1' && num1[1] == '0' && num1[2] == '0')
+                {
+
+                    respuesta += "Cien";
+                }
+                else
+                {
+                    respuesta += Centena(num1[0]);
+                }
+
+                respuesta += Decena(num1[1]);
+                if (num1[2] != '0')
+                { respuesta += "y "; }
+                respuesta += Unidad(num1[2]);
+
+
+            }
+
+            if (num1.Length == 2)
+            {
+
+                if (num1[1] == '0' || (num1[1] >= '6' && num1[1] <= '9'))
+                {
+                    respuesta += Decena(num1[0]);
+                    if (num1[1] != '0')
+                    { respuesta += "y "; }
+                    respuesta += Unidad(num1[1]);
+                }
+
+                if (num1[0] == '1' && num1[1] < '6' && num1[1] >= '1')
+                {
+                    respuesta += MayorADiez(num1[1]);
+
+                }
+
+            }
+
+            if (num1.Length == 1)
+            {
+
+                if (num1[0] == '0')
+                {
+                    return "Cero";
+                }
+
+                else
+                {
+                    respuesta += Unidad(num1[0]);
+                }
+
+
+            }
+
+
+
+            return respuesta;
+        }
 
 
 
@@ -264,17 +397,45 @@ namespace Convertir_de_numero_a_literal.Controllers
             if (num1.Length == 7)
             {
                 respuesta += Millon(num1[0]);
-                respuesta += Centena(num1[1]);
+
+                if (num1[0] == '1' && num1[1] == '0' && num1[2] == '0')
+                {
+
+                    respuesta += "Cien";
+                }
+                else
+                {
+                    respuesta += Centena(num1[1]);
+                }
                 respuesta += Decena(num1[2]);
-                if (num1[2] != '0')
+                if (num1[2] != '0' || num1[3] != '1')
                 { respuesta += " y"; }
-                respuesta += Unidad(num1[3]);
+
+                if (num1[2] == '0' && num1[3] == '1')
+                {
+                    respuesta += " un";
+
+                }
+                else
+                {
+                    respuesta += Unidad(num1[3]);
+                }
+
                 if (num1[1] != '0' || num1[2] != '0' || num1[3] != '0')
                 {
                     respuesta += " mil ";
                 }
 
-                respuesta += Centena(num1[4]);
+                if (num1[4] == '1' && num1[5] == '0' && num1[6] == '0')
+                {
+
+                    respuesta += "Cien";
+                }
+                else
+                {
+                    respuesta += Centena(num1[4]);
+                }
+
                 respuesta += Decena(num1[5]);
                 if (num1[6] != '0')
                 { respuesta += " y "; }
@@ -285,8 +446,17 @@ namespace Convertir_de_numero_a_literal.Controllers
 
             if (num1.Length == 6)
             {
-                
-                respuesta += Centena(num1[0]);
+
+                if (num1[0] == '1' && num1[1] == '0' && num1[2] == '0')
+                {
+
+                    respuesta += "Cien";
+                }
+                else
+                {
+                    respuesta += Centena(num1[0]);
+                }
+
                 respuesta += Decena(num1[1]);
                 if (num1[1] != '0')
                 { respuesta += "y "; }
@@ -296,7 +466,16 @@ namespace Convertir_de_numero_a_literal.Controllers
                     respuesta += " mil ";
                 }
 
-                respuesta += Centena(num1[3]);
+                if (num1[3] == '1' && num1[4] == '0' && num1[5] == '0')
+                {
+
+                    respuesta += "Cien";
+                }
+                else
+                {
+                    respuesta += Centena(num1[3]);
+                }
+
                 respuesta += Decena(num1[4]);
                 if (num1[5] != '0')
                 { respuesta += " y"; }
@@ -318,7 +497,16 @@ namespace Convertir_de_numero_a_literal.Controllers
                     respuesta += " mil ";
                 }
 
-                respuesta += Centena(num1[2]);
+                if (num1[2] == '1' && num1[3] == '0' && num1[4] == '0')
+                {
+
+                    respuesta += "Cien";
+                }
+                else
+                {
+                    respuesta += Centena(num1[2]);
+                }
+
                 respuesta += Decena(num1[3]);
                 if (num1[4] != '0')
                 { respuesta += " y"; }
@@ -336,7 +524,16 @@ namespace Convertir_de_numero_a_literal.Controllers
                     respuesta += " mil ";
                 }
 
-                respuesta += Centena(num1[1]);
+                if (num1[1] == '1' && num1[2] == '0' && num1[3] == '0')
+                {
+
+                    respuesta += "Cien";
+                }
+                else
+                {
+                    respuesta += Centena(num1[1]);
+                }
+
                 respuesta += Decena(num1[2]);
                 if (num1[3] != '0')
                 { respuesta += "y "; }
@@ -349,7 +546,16 @@ namespace Convertir_de_numero_a_literal.Controllers
             if (num1.Length == 3)
             {
 
-                respuesta += Centena(num1[0]);
+                if (num1[0] == '1' && num1[1] == '0' && num1[2] == '0')
+                {
+
+                    respuesta += "Cien";
+                }
+                else
+                {
+                    respuesta += Centena(num1[0]);
+                }
+
                 respuesta += Decena(num1[1]);
                 if (num1[2] != '0')
                 { respuesta += "y "; }
@@ -360,23 +566,41 @@ namespace Convertir_de_numero_a_literal.Controllers
 
             if (num1.Length == 2)
             {
-          
-                respuesta += Decena(num1[0]);
-                if (num1[1] != '0')
-                { respuesta += "y "; }
-                respuesta += Unidad(num1[1]);
 
+                if (num1[1] == '0' || (num1[1] >= '6' && num1[1] <= '9'))
+                {
+                    respuesta += Decena(num1[0]);
+                    if (num1[1] != '0')
+                    { respuesta += "y "; }
+                    respuesta += Unidad(num1[1]);
+                }
+
+                if (num1[0] == '1' && num1[1] < '6' && num1[1] >= '1')
+                {
+                    respuesta += MayorADiez(num1[1]);
+
+                }
 
             }
 
             if (num1.Length == 1)
-            {             
-                respuesta += Unidad(num1[0]);
-                
+            {
+
+                if (num1[0] == '0')
+                {
+                    return "Cero";
+                }
+
+                else
+                {
+                    respuesta += Unidad(num1[0]);
+                }
+
 
             }
 
-             
+            
+
             return respuesta;
         }
 
